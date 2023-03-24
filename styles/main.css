@@ -1,3 +1,5 @@
+@import url('../fonts/stylesheet.css');
+
 * {
     margin: 0;
     padding: 0;
@@ -43,7 +45,8 @@ html {
 }
 
 body {
-    font-family: var(--font-family-1);
+    /* font-family: var(--font-family-1); */
+    font-family: "raleway";
 }
 
 .disable-scroll {
@@ -75,7 +78,7 @@ span {
 h2 {
     color: var(--color-main-1);
     font-size: var(--font-3);
-    font-weight: 100;
+    font-weight: 400;
     line-height: 1.166em;
     text-align: center;
 }
@@ -117,7 +120,7 @@ header .container {
     align-items: center;
     font-size: 1.4em;
     letter-spacing: .03em;
-    font-family: var(--font-family-2);
+    font-family: "noticia";
 }
 
 .logo .icon {
