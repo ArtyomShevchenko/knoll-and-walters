@@ -33,7 +33,51 @@ const header = document.querySelector("header")
 doc.style.setProperty("--header-height", `${header.offsetHeight}px`)
 
 // scroll to top button
-document.getElementById("scrollToTopButton")
-    .addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" })
+// document.getElementById("scrollToTopButton")
+//     .addEventListener("click", () => {
+//         window.scrollTo({ top: 0, behavior: "smooth" })
+//     })
+
+
+// window.addEventListener("scroll", e => {
+//     document.documentElement.style.setProperty("--transformBgY", `${window.scrollY}px`)
+// })
+
+const sections = document.querySelectorAll("section")
+
+sections.forEach(section => {
+    const a = document.createElement("a")
+    a.href = `#${section.id}`
+    a.textContent = section.id.replace("_", " ")
+    a.classList.add("nav-link")
+    nav.append(a)
+})
+
+
+const callbackFunction = (entries, observer) => {
+    entries.forEach(element => {
+        if (element.isIntersecting) {
+            nav.querySelector(`[href="#${element.target.id}"]`).classList.add("nav-link-active")
+        } else {
+            nav.querySelector(`[href="#${element.target.id}"]`).classList.remove("nav-link-active")
+        }
     })
+}
+
+const observer = new IntersectionObserver(callbackFunction, { threshold: 0.4 })
+
+sections.forEach(element => {
+    observer.observe(element)
+})
+
+
+// -----------------str.replace()-----------------
+// const str = "Lorem +380 93 487 77 58 ipsum lorem"
+
+// // flag /g - global, for all value
+// // flag /i - ignore string case (uppercase), replace all to lowercase
+// const newStr = str.replace(/l|O|r/gi, "_")
+
+// const newStr2 = str.replace(/[0-5]/gi, (e) => {
+//     return e * 2
+// })
