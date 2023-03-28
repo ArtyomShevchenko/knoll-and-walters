@@ -45,7 +45,7 @@
     </header>
 
     <main>
-        <section class="home" id="home">
+        <!-- <section class="home" id="home">
             <div class="container">
                 <div class="wrapper">
                     <div class="title-container">
@@ -61,11 +61,13 @@
 
         <section class="practice-areas" id="practice_areas">
             <div class="container">
-                <div class="wrapper">
-                    <div class="title-container">
-                        <h2><b>PRACTICE</b> AREAS</h2>
+                <div class="title">
+                    <div class="wrapper">
+                        <h2><b>PRACTICE</b><br>AREAS</h2>
                     </div>
-                    <div class="content-container">
+                </div>
+                <div class="content">
+                    <div class="wrapper">
                         <dl>
                             <div>
                                 <dt>INSOLVENCY</dt>
@@ -166,6 +168,63 @@
                                 <a href="tel:123-456-7890">123-456-7890</a>
                                 <a href="mailto:info@mysite.com?subject=Feedback">info@mysite.com</a>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="wrapper">
+                    <div class="row">
+                        <div class="title">
+                            <div class="wrapper">
+                                <h2>CONTACT<br>KNOLL &<br>WALTERS</h2>
+                            </div>
+                        </div>
+                        <div class="content">
+
+                            <h3><b>Our</b> Address</h3>
+
+                            <div>
+                                <p>500 Terry Francine St. San Francisco, CA 12344</p>
+                                <a href="tel:123-456-7890">123-456-7890</a>
+                                <a href="mailto:info@mysite.com?subject=Feedback">info@mysite.com</a>
+                            </div>
+
+                            <a href="#">Click Here to Find Us</a>
+
+                            <p>For any general inquiries, please fill in the following contact form:</p>
+
+                            <form method="POST" action="http://127.0.0.1:3080/">
+                                <label>
+                                    <span>First Name</span>
+                                    <input type="text" name="firstName" pattern="[a-zA-Z]+\w{1}" required>
+                                </label>
+
+                                <label>
+                                    <span>Last Name</span>
+                                    <input type="text" name="lastName" pattern="[a-zA-Z]+\w{1}" required>
+                                </label>
+
+                                <label>
+                                    <span>Email</span>
+                                    <input type="email" name="email" required>
+                                </label>
+
+                                <label>
+                                    <span>Subject</span>
+                                    <input type="text" name="subject" required pattern="[a-zA-Z0-9]+">
+                                </label>
+
+                                <label>
+                                    <span>Message</span>
+                                    <textarea name="message" required></textarea>
+                                </label>
+
+                                <button type="submit">Submit</button>
+                            </form>
                         </div>
                     </div>
                 </div>

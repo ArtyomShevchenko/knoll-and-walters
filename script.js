@@ -81,3 +81,30 @@ sections.forEach(element => {
 // const newStr2 = str.replace(/[0-5]/gi, (e) => {
 //     return e * 2
 // })
+
+
+const form = document.querySelector("form")
+form.addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    const formData = new FormData(form)
+    const obj = {}
+
+    for (let [key, value] of formData) {
+        obj[key] = value
+    }
+
+    fetch("http://127.0.0.1:4000",
+        {
+            method: "POST",
+            body: JSON.stringify(obj),
+        }
+    )
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
+
+
+
+})
+
