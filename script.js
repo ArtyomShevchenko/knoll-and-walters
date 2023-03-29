@@ -43,32 +43,7 @@ doc.style.setProperty("--header-height", `${header.offsetHeight}px`)
 //     document.documentElement.style.setProperty("--transformBgY", `${window.scrollY}px`)
 // })
 
-const sections = document.querySelectorAll("section")
 
-sections.forEach(section => {
-    const a = document.createElement("a")
-    a.href = `#${section.id}`
-    a.textContent = section.id.replace("_", " ")
-    a.classList.add("nav-link")
-    nav.append(a)
-})
-
-
-const callbackFunction = (entries, observer) => {
-    entries.forEach(element => {
-        if (element.isIntersecting) {
-            nav.querySelector(`[href="#${element.target.id}"]`).classList.add("nav-link-active")
-        } else {
-            nav.querySelector(`[href="#${element.target.id}"]`).classList.remove("nav-link-active")
-        }
-    })
-}
-
-const observer = new IntersectionObserver(callbackFunction, { threshold: 0.4 })
-
-sections.forEach(element => {
-    observer.observe(element)
-})
 
 
 // -----------------str.replace()-----------------
@@ -103,8 +78,6 @@ form.addEventListener("submit", (e) => {
         .then(res => res.json())
         .then(data => console.log(data))
         .catch(err => console.log(err))
-
-
-
 })
 
+// chat
