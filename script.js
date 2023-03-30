@@ -10,11 +10,10 @@ nav.addEventListener("click", (event) => {
     }
     event.target.classList.add("nav-link-active");
     nav.classList.remove("nav-active");
-
-    burger.querySelector(".burger").classList.remove("burger-active");
-    navContainer.classList.remove("nav-containeer-active");
-    document.body.classList.remove("disable-scroll");
   }
+  burger.querySelector(".burger").classList.remove("burger-active");
+  navContainer.classList.remove("nav-containeer-active");
+  document.body.classList.remove("disable-scroll");
 });
 
 // burger

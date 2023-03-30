@@ -393,6 +393,40 @@ header .row {
     opacity: 0.75;
 }
 
+@media (max-width: 525px) {
+    .home .container {
+        padding: 60px 0;
+        height: 100%;
+    }
+
+    .home .row {
+        display: flex;
+        flex-direction: column;
+        position: relative
+    }
+
+    .home .title {
+        padding: 40px 20px 30px 20px;
+    }
+
+    .home .box-bg::before {
+        content: "";
+        transform: translateY(0%);
+        height: 100%;
+        width: 100%;
+        opacity: 0.75;
+        inset: 0;
+    }
+
+    .home h2 {
+        font-size: 32px;
+    }
+
+    .home p {
+        font-size: 16px;
+    }
+}
+
 
 
 .practice-areas .container {
@@ -551,6 +585,38 @@ header .row {
     inset: 0;
 
     filter: sepia(20%) brightness(0.8) grayscale(0.2) contrast(0.8);
+}
+
+@media (max-width: 900px) {
+    .our-vision .container {
+        padding: 0 0 60px 0;
+    }
+
+    .our-vision h2 {
+        font-size: 35px;
+        padding: 60px 0;
+        margin: 0;
+    }
+
+    .our-vision p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 525px) {
+    .our-vision .container {
+        padding: 0 0 50px 0;
+    }
+
+    .our-vision h2 {
+        font-size: 29px;
+        padding: 50px 0;
+        margin: 0;
+    }
+
+    .our-vision p {
+        font-size: 14px;
+    }
 }
 
 
@@ -832,6 +898,62 @@ header .row {
 
 .contact textarea {
     height: 100%;
+}
+
+@media (max-width: 900px) {
+    .contact .container {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        position: relative;
+    }
+
+    .box-bg::before {
+        content: "";
+        right: -100px;
+    }
+
+    .contact .row {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: start;
+        grid-gap: 0;
+    }
+
+    .contact .title {
+        padding: 0;
+        padding: 30px 0;
+    }
+
+    .contact .title h2 {
+        font-size: 28px;
+        text-align: start;
+    }
+
+    .contact .content {
+        padding: 40px 0 55px 0;
+    }
+
+    .contact form {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px 20px;
+    }
+
+    .contact form button,
+    .contact label:has(textarea) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .contact textarea {
+        height: 200px;
+    }
+}
+
+@media (max-width: 525px) {
+    .contact textarea {
+        height: 100px;
+    }
 }
 
 
@@ -1152,7 +1274,7 @@ img {
         fill: var(--color-1);
         display: block;
     }
-    
+
     .chat-container .chat-button button span {
         display: none;
     }
