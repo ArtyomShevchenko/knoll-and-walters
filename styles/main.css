@@ -250,7 +250,7 @@ header .row {
         right: 0;
         left: 0;
         bottom: 0;
-        z-index: 90;
+        z-index: 49;
         display: flex;
         justify-content: flex-end;
         background-color: transparent;
@@ -266,7 +266,7 @@ header .row {
     .burger-container {
         display: block;
         position: relative;
-        z-index: 99;
+        z-index: 50;
         cursor: pointer;
         user-select: none;
     }
@@ -882,6 +882,10 @@ footer .social-container {
 }
 
 @media (max-width: 900px) {
+    footer .container {
+        padding-bottom: 100px;
+    }
+
     footer .wrapper {
         display: flex;
         flex-direction: column-reverse;
@@ -911,9 +915,9 @@ img {
 /* chat */
 .chat-container {
     position: fixed;
+    z-index: 99;
     bottom: 0;
     right: 20px;
-
 }
 
 .chat-container .chat-button button span {
@@ -940,7 +944,6 @@ img {
 
 .chat-container .chat-body {
     display: none;
-    /* display: block; */
     max-width: 340px;
     background-color: var(--chat-bg);
     box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.3);
@@ -1153,14 +1156,18 @@ img {
     .chat-container .chat-button button span {
         display: none;
     }
+
+    .chat-container .middle {
+        height: 100%;
+    }
+
+    .chat-container .chat-body-open {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
 }
-
-
 
 .to-top-btn span {
     display: none;
-}
-
-footer .container {
-    padding-bottom: 100px;
 }

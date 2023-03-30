@@ -40,17 +40,6 @@ doc.style.setProperty("--header-height", `${header.offsetHeight}px`);
 //     document.documentElement.style.setProperty("--transformBgY", `${window.scrollY}px`)
 // })
 
-// -----------------str.replace()-----------------
-// const str = "Lorem +380 93 487 77 58 ipsum lorem"
-
-// // flag /g - global, for all value
-// // flag /i - ignore string case (uppercase), replace all to lowercase
-// const newStr = str.replace(/l|O|r/gi, "_")
-
-// const newStr2 = str.replace(/[0-5]/gi, (e) => {
-//     return e * 2
-// })
-
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -77,11 +66,44 @@ const chatBody = document.querySelector(".chat-body");
 chatButton.addEventListener("click", (e) => {
   chatBody.classList.toggle("chat-body-open");
   chatButton.classList.toggle("chat-button-close");
-  document.body.classList.toggle("disable-scroll");
+  if(window.innerWidth < 900) {
+      document.body.classList.toggle("disable-scroll");
+  }
+  chatBody.querySelector(".time").textContent = chatTime()
+
+  setInterval(() => {
+      chatBody.querySelector(".time").textContent = chatTime()
+  }, 1000 * 60)
 });
 
 chatBody.querySelector(".close-btn").addEventListener("click", (e) => {
   chatBody.classList.toggle("chat-body-open");
   chatButton.classList.toggle("chat-button-close");
-  document.body.classList.toggle("disable-scroll");
+  document.body.classList.remove("disable-scroll");
 });
+
+// time chat
+function chatTime() {
+    const date = new Date()
+    const meridiem = () => date.getHours() < 12 ? "PM" : "AM"
+    const hour = () => {
+        const value = date.getHours().toString()
+        if(value.length > 1) {
+            return value
+        }
+        else {
+            return "0" + value
+        }
+    };
+    const min = () => {
+        const value = date.getMinutes().toString()
+        if(value.length > 1) {
+            return value
+        }
+        else {
+            return "0" + value
+        }
+    };
+
+    return `${hour()}:${min()} ${meridiem()}`
+}
