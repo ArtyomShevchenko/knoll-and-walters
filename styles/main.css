@@ -195,7 +195,7 @@ header .row {
 
 @media(max-width: 900px) {
     header {
-        position: initial;
+        position: relative;
     }
 
     header .row {
@@ -900,6 +900,15 @@ header .row {
     height: 100%;
 }
 
+.contact .link-contact {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.contact .link-contact:hover {
+    
+}
+
 @media (max-width: 900px) {
     .contact .container {
         padding-top: 0px;
@@ -959,44 +968,45 @@ header .row {
 
 
 /* footer */
+.footer-container {
+    padding: 39px 0;
+}
 
-footer p {
+.footer-container p {
     color: var(--color-main-2);
     font-size: .85em;
 }
 
-footer a {
+.footer-container a {
     text-decoration: underline;
     color: var(--color-main-2);
 }
 
-footer svg {
+.footer-container svg {
     fill: var(--color-main-2);
     width: 23px;
     height: 23px;
 }
 
-footer a:has(svg) {
+.footer-container a:has(svg) {
     text-decoration: none;
 }
 
-footer a[href*='linkedin'] svg {
+.footer-container a[href*='linkedin'] svg {
     fill: #0073B2;
 }
 
-footer a[href*='twitter'] svg {
+.footer-container a[href*='twitter'] svg {
     fill: #55ACEE;
 }
 
-footer .wrapper {
+.footer-container .wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-footer .container {
-    padding: 39px 0;
-}
+
 
 footer .social-container {
     display: flex;
@@ -1004,11 +1014,11 @@ footer .social-container {
 }
 
 @media (max-width: 900px) {
-    footer .container {
+    .footer-container {
         padding-bottom: 100px;
     }
 
-    footer .wrapper {
+    .footer-container .wrapper {
         display: flex;
         flex-direction: column-reverse;
         align-items: flex-start;
@@ -1292,4 +1302,90 @@ img {
 
 .to-top-btn span {
     display: none;
+}
+
+
+
+
+
+/* our-address */
+.our-address_hidden {
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-main-4);
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all .5s;
+}
+
+.our-address {
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-main-4);
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: all .5s;
+    overflow: scroll;
+}
+
+.our-address h1 {
+    margin-top: 28px;
+    font-size: 42px;
+    font-weight: 400;
+}
+
+.our-address .content {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.our-address p,
+.our-address a {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.our-address .map {
+    width: 100%;
+    height: 335px;
+    margin-top: 40px;
+}
+
+.our-address iframe {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 525px) {
+    .our-address .container {
+        padding-bottom: 0;
+    }
+
+    .our-address h1 {
+        margin-top: 18px;
+        font-size: 31px;
+    }
+    
+    .our-address .content {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .our-address p,
+    .our-address a {
+        font-size: 14px;
+        font-weight: 400;
+    }
+    
+    .our-address .map {
+        width: 100%;
+        aspect-ratio: 1/1;
+        margin-top: 40px;
+    }
 }

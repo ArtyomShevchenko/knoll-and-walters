@@ -10,10 +10,16 @@ nav.addEventListener("click", (event) => {
     }
     event.target.classList.add("nav-link-active");
     nav.classList.remove("nav-active");
+    
   }
   burger.querySelector(".burger").classList.remove("burger-active");
   navContainer.classList.remove("nav-containeer-active");
   document.body.classList.remove("disable-scroll");
+
+  // hidden our addres container
+  if(ourAddresBlock.classList.contains("our-address")) {
+    ourAddresBlock.classList.replace("our-address", "our-address_hidden")
+  }
 });
 
 // burger
